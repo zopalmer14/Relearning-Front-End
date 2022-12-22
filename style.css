@@ -3,19 +3,17 @@
 
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
-/* basic styling */
+/* basic general styling */
 
 body {
   margin: 0;
   padding: 0;
+  font-size: 16px;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   color: #566b78;
 }
 
-h2 {
-  margin-top: 1em;
-  padding-top: 1em;
-}
+/* styles for emphasis */
 
 h1,
 h2,
@@ -26,36 +24,21 @@ strong {
 /* primary color */
 
 a {
-  color: #e81c4f;
+  color: #024F0B;
 }
 
-/* header with image */ 
+/* header */ 
 
 header {
-  background-color: #263d36;
+  background-color: #024F0B;
   background-image: url("visuals/hoh_river_crossing.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+  text-align: center;
   line-height: 1.2;
   max-width: none;
   padding: 10vw 2em;
-  text-align: center;
-}
-
-/* add a logo */
-
-img {
-  height: auto;
-  max-width: 100%;
-}
-
-header #logo {
-  display: inline-block;
-  height: 120px;
-  vertical-align: top;
-  width: 120px;
-  border-radius: 50%;
 }
 
 /* change the text styles for the header */
@@ -67,7 +50,7 @@ header h1 {
 }
 
 header a {
-  border: 1px solid #e81c4f;
+  border: 1px solid #024F0B;
   border-radius: 290486px;
   color: white;
   font-size: 0.6em;
@@ -80,18 +63,86 @@ header a {
 }
 
 header a:hover {
-  background:  #e81c4f;
+  background:  #024F0B;
   color: white;
 }
 
-/* description text */
+/* logo for header */
 
-.container {
-  margin: 0 auto;
-  padding: 4em 1em;
-  max-width: 50em;
-  line-height: 1.5;
+img {
+  height: auto;
+  max-width: 100%;
+  border-radius: 50%;
 }
+
+img #logo {
+  border-radius: 50%;
+}
+
+header img {
+  display: inline-block;
+  vertical-align: top;
+  height: 120px;
+  width: 120px;
+}
+
+/* nav bar which appears and follows as you scroll */
+
+.banner {
+  background-color: #024F0B;
+  height: 10px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav div {
+  margin: 0 10px;
+}
+
+.nav .links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav .links .link-wrapper {
+  height: 22px;
+  border-bottom: 1px solid transparent;
+  transition: 0.5s;
+}
+
+.nav .links .link-wrapper a {
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.nav .links .link-wrapper:hover {
+  border-bottom: 1px solid black;
+}
+
+.nav .links .link-wrapper a:hover {
+  color: black;
+}
+
+.nav .right-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav .right-side img {
+  height: 50px;
+  width: 50px;
+  margin: 0 10px;
+}
+
+/* footer */
 
 footer {
   margin: 0 auto;
