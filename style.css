@@ -95,6 +95,13 @@ header img {
 
 /* nav bar which appears and follows as you scroll */
 
+#magic-navbar {
+  position: fixed;
+  top: -200px;
+  width: 100vw;
+  transition: top 0.3s;
+}
+
 .banner {
   background-color: #024F0B;
   height: 10px;
