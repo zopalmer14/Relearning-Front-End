@@ -106,17 +106,26 @@ header img {
   z-index: 100;
 }
 
-#magic-navbar:hover {
+#normal-navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: #f2f2f2;
+  transition: background 0.3s;
+  z-index: 100;
+}
+
+#magic-navbar:hover, #normal-navbar:hover {
   background-color: #024F0B;
 }
 
-.banner {
+#banner {
   transition: background 0.3s;
   background-color: #024F0B;
   height: 10px;
 }
 
-.nav {
+#nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -124,17 +133,17 @@ header img {
   font-size: 1em;
 }
 
-.nav div {
+#nav div {
   margin: 0 10px;
 }
 
-.nav .right-side {
+#nav #right-side {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav .right-side img {
+#nav #right-side img {
   height: 50px;
   width: 50px;
   margin: 0 10px;
@@ -209,4 +218,37 @@ footer {
   height: 50vh;
   width: 100vw;
   background-color: #024F0B;
+}
+
+/* project portfolio styles */
+
+#portfolio-container {
+  aspect-ratio: 1 / 1;
+  width: 80vh;
+  margin: 100px auto 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.project {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  background-color: #333
+}
+
+.project img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
 }
