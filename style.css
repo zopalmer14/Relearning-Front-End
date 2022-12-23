@@ -26,13 +26,15 @@ strong {
 /* remove underline from links */
 
 a {
-  transition: 0.5s;
   text-decoration: none;
-  color: #8a8a8a;
 }
 
 .personal-info a {
   color: #333;
+}
+
+.personal-info a:hover {
+  color: #024F0B;
 }
 
 /* header */ 
@@ -99,10 +101,17 @@ header img {
   position: fixed;
   top: -200px;
   width: 100vw;
-  transition: top 0.3s;
+  background-color: #f2f2f2;
+  transition: top 0.3s, background 0.3s;
+  z-index: 100;
+}
+
+#magic-navbar:hover {
+  background-color: #024F0B;
 }
 
 .banner {
+  transition: background 0.3s;
   background-color: #024F0B;
   height: 10px;
 }
@@ -142,19 +151,35 @@ header img {
 .link-wrapper {
   height: 22px;
   border-bottom: 1px solid transparent;
-  transition: 0.5s;
+  transition: border 0.5s;
 }
 
 .link-wrapper span {
   margin-left: 3px;
 }
 
-.link-wrapper:hover {
+#name, .link-wrapper#nav-link, .link-wrapper#nav-link a {
+  color: #000000;
+}
+
+.link-wrapper#nav-link:hover {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.link-wrapper#personal-link {
+  color: #333;
+}
+
+.link-wrapper#personal-link:hover {
   border-bottom: 1px solid #024F0B;
   color: #024F0B;
 }
+
+a i, a span {
+  color: #333;
+}
   
-a:hover, a:hover i, a:hover span {
+a:hover i, a:hover span {
   color: #024F0B;
 }
 
