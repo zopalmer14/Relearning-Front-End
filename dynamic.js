@@ -24,18 +24,21 @@ function setup() {
 
 function scrollFunction() {
   // check the coordinates of the background to see if it has exited the viewport
-  var background_pos = document.getElementById("hoh-background").getBoundingClientRect();
-  if (background_pos.bottom <= 0) {
-    document.getElementById("magic-navbar").style.top = "0";
-  } else {
-    document.getElementById("magic-navbar").style.top = "-200px";
+  var background = document.getElementById("hoh-background")
+  if (background != null) {
+    var background_pos = background.getBoundingClientRect();
+    if (background_pos.bottom <= 0) {
+      document.getElementById("magic-navbar").style.top = "0";
+    } else {
+      document.getElementById("magic-navbar").style.top = "-200px";
+    }
   }
 }
 
 function navbarEnter() {
   /* change the background color of the banner and the navbar itself */
   var banner = document.getElementById("banner");
-  banner.style.background = '#f2f2f2';
+  banner.style.background = '#8a8a8a';
 
   var navbars = document.getElementsByClassName("navbar");
   for (var i = 0; i < navbars.length; i++) {
@@ -49,9 +52,7 @@ function navbarEnter() {
   var nav_links = document.getElementsByClassName("nav-link");
   for (var i = 0; i < nav_links.length; i++) {
     nav_links[i].style.color = '#f2f2f2';
-    console.log(nav_links[i]);
     if (nav_links[i].firstElementChild != null) {
-      console.log(nav_links[i].firstElementChild);
       nav_links[i].firstElementChild.style.color = '#f2f2f2';
     }
   }
