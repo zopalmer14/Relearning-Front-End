@@ -84,7 +84,7 @@ img {
   border-radius: 50%;
 }
 
-img #logo {
+img .logo {
   border-radius: 50%;
 }
 
@@ -97,26 +97,20 @@ header img {
 
 /* nav bar which appears and follows as you scroll */
 
-#magic-navbar {
+.navbar {
   position: fixed;
-  top: -200px;
   width: 100vw;
   background-color: #f2f2f2;
   transition: top 0.3s, background 0.3s;
   z-index: 100;
 }
 
-#normal-navbar {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  background-color: #f2f2f2;
-  transition: background 0.3s;
-  z-index: 100;
+#magic-navbar {
+  top: -200px;
 }
 
-#magic-navbar:hover, #normal-navbar:hover {
-  background-color: #024F0B;
+#normal-navbar {
+  top: 0;
 }
 
 #banner {
@@ -159,7 +153,6 @@ header img {
 
 .link-wrapper {
   height: 22px;
-  border-bottom: 1px solid transparent;
   transition: border 0.5s;
 }
 
@@ -167,19 +160,15 @@ header img {
   margin-left: 3px;
 }
 
-#name, .link-wrapper#nav-link, .link-wrapper#nav-link a {
-  color: #000000;
-}
-
-.link-wrapper#nav-link:hover {
-  border-bottom: 1px solid #f2f2f2;
-}
-
-.link-wrapper#personal-link {
+#name, .personal-link, .nav-link, .nav-link a {
   color: #333;
 }
 
-.link-wrapper#personal-link:hover {
+.nav-link:hover {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.personal-link:hover {
   border-bottom: 1px solid #024F0B;
   color: #024F0B;
 }
