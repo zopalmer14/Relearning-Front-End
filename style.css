@@ -3,9 +3,16 @@
 
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
-/* primary color = #024F0B (dark green) */
+/* global vars for color choices */
 
-/* basic general styling */
+:root {
+  --white: #f2f2f2;
+  --grey: #8a8a8a;
+  --dark_grey: #333;
+  --primary_color: #024F0B;
+}
+
+/* general styling */
 
 body {
   margin: 0;
@@ -15,12 +22,10 @@ body {
   color: #8a8a8a;
 }
 
-/* styles for emphasis */
-
-h1,
-h2,
-strong {
-  color: #333;
+h1 {
+  color: var(--white);
+  font-size: 2.5em;
+  font-weight: 300;
 }
 
 /* remove underline from links */
@@ -30,53 +35,46 @@ a {
 }
 
 .personal-info a {
-  color: #333;
+  color: var(--dark_grey);
 }
 
 .personal-info a:hover {
-  color: #024F0B;
+  color: var(--primary_color);
 }
 
-/* header */ 
+/* header styles */ 
 
 header {
-  background-color: #024F0B;
+  background-color: var(--primary_color);
   background-image: url("references/hoh_river_crossing.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+  
   text-align: center;
   line-height: 1.2;
   max-width: none;
   padding: 10vw 2em;
 }
 
-/* change the text styles for the header */
-
-header h1 {
-  color: white;
-  font-size: 2.5em;
-  font-weight: 300;
-}
-
 header a {
-  border: 1px solid #024F0B;
+  border: 1px solid var(--primary_color);
   border-radius: 290486px;
-  color: white;
+  transition: all 0.2s ease-out;
+
+  padding: 1em 2em;
   font-size: 0.6em;
   letter-spacing: 0.2em;
-  padding: 1em 2em;
   text-transform: uppercase;
-  transition: none 200ms ease-out;
-  transition-property: color, background;
+  color: var(--white);
 }
 
 header a:hover {
-  background:  #024F0B;
-  color: white;
+  background:  var(--primary_color);
+  color: var(--white);
 }
 
-/* logo for header */
+/* logo and image styling */
 
 img {
   height: auto;
@@ -84,13 +82,10 @@ img {
   border-radius: 50%;
 }
 
-img .logo {
-  border-radius: 50%;
-}
-
 header img {
   display: inline-block;
   vertical-align: top;
+
   height: 120px;
   width: 120px;
 }
@@ -99,10 +94,11 @@ header img {
 
 .navbar {
   position: fixed;
-  width: 100vw;
-  background-color: #f2f2f2;
-  transition: top 0.3s, background 0.3s;
   z-index: 100;
+  width: 100vw;
+
+  background-color: var(--white);
+  transition: all 0.3s ease;
 }
 
 #magic-navbar {
@@ -114,8 +110,8 @@ header img {
 }
 
 #banner {
-  transition: background 0.3s;
-  background-color: #024F0B;
+  transition: background 0.3s ease;
+  background-color: var(--primary_color);
   height: 10px;
 }
 
@@ -123,6 +119,7 @@ header img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 10px 20px;
   font-size: 1em;
 }
@@ -161,24 +158,24 @@ header img {
 }
 
 #name, .personal-link, .nav-link, .nav-link a {
-  color: #333;
+  color: var(--dark_grey);
 }
 
 .nav-link:hover {
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid var(--white);
 }
 
 .personal-link:hover {
-  border-bottom: 1px solid #024F0B;
-  color: #024F0B;
+  border-bottom: 1px solid var(--primary_color);
+  color: var(--primary_color);
 }
 
 a i, a span {
-  color: #333;
+  color: var(--dark_grey);
 }
   
 a:hover i, a:hover span {
-  color: #024F0B;
+  color: var(--primary_color);
 }
 
 /* personal info */
@@ -191,35 +188,17 @@ a:hover i, a:hover span {
   line-height: 1.5;
 }
 
-/* redirect section with links */
-
-.redirect {
-  align-content: center;
-  margin: 0 auto;
-  padding: 4em 1em;
-  max-width: 50em;
-  line-height: 1.5;
-}
-
-/* footer */
-
-footer {
-  height: 50vh;
-  width: 100vw;
-  background-color: #024F0B;
-}
-
 /* project portfolio styles */
 
 #portfolio-container {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 2 / 1;
   width: 80vw;
   margin: 80px auto 0 auto;
-  padding-top: 5vw;
+  padding: 2.5vw 0;
 
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 
   justify-content: space-between;
   align-items: center;
@@ -236,20 +215,38 @@ footer {
   position: relative;
   margin: 10px;
   border-radius: 5%;
-  color: #f2f2f2;
+  color: var(--white);
+  text-align: center;
 }
 
 .project-info {
   position: absolute;
   width: 100%;
   height: 100%;
-  align-items: center;
   border-radius: 5%;
-  background-color: #024F0B;
+  background-color: var(--primary_color);
 
   opacity: 0;
   transform: scale(0);
   transition: all 1s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.project-info h1 {
+  font-size: 1.5em;
+}
+
+.project-info p {
+  font-weight: 200;
+}
+
+.project-info h1, p, a {
+  margin: 0;
+  padding: 0.25em;
 }
 
 .project-title {
@@ -263,12 +260,53 @@ footer {
   transition: all 1s ease-in-out;
 }
 
-.project-info p, .project-title h1 {
-  padding: 1em;
-}
-
 .project:hover .project-info {
   opacity: 1;
   transform: scale(1);
+}
+
+.project:hover .project-title {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.icon-container {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--dark_grey);
+  border-radius: 50%;
+  transition: 0.5s ease;
+}
+
+.icon-container i {
+  color: var(--white);
+  transition: 0.5s ease;
+}
+
+.icon-container:hover {
+  background-color: var(--white);
+}
+
+.icon-container:hover i {
+  color: var(--dark_grey);
+}
+
+/* footer with redirect links */
+
+footer {
+  background-color: var(--primary_color);
+}
+
+.redirect {
+  align-content: center;
+  margin: 0 auto;
+  padding: 4em 1em;
+  max-width: 50em;
+  line-height: 1.5;
 }
 
