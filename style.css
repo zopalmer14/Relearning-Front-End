@@ -7,8 +7,10 @@
 
 :root {
   --white: #f2f2f2;
+  --light_grey: #ededed;
   --grey: #8a8a8a;
   --dark_grey: #333;
+  --black: #000;
   --primary_color: #024F0B;
 }
 
@@ -19,27 +21,12 @@ body {
   padding: 0;
   font-size: 16px;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  color: #8a8a8a;
-}
-
-h1 {
-  color: var(--white);
-  font-size: 2.5em;
-  font-weight: 300;
-}
-
-/* remove underline from links */
-
-a {
-  text-decoration: none;
-}
-
-.personal-info a {
   color: var(--dark_grey);
 }
 
-.personal-info a:hover {
-  color: var(--primary_color);
+a {
+  text-decoration: none;
+  padding: 0;
 }
 
 /* header styles */ 
@@ -55,6 +42,12 @@ header {
   line-height: 1.2;
   max-width: none;
   padding: 10vw 2em;
+}
+
+header h1 {
+  color: var(--white);
+  font-size: 2.5em;
+  font-weight: 300;
 }
 
 header a {
@@ -92,12 +85,12 @@ header img {
 
 /* nav bar which appears and follows as you scroll */
 
-.navbar {
+.nav-bar {
   position: fixed;
   z-index: 100;
   width: 100vw;
 
-  background-color: var(--white);
+  background: var(--light_grey);
   transition: all 0.3s ease;
 }
 
@@ -140,6 +133,18 @@ header img {
   margin: 0 10px;
 }
 
+.nav-bar:hover #name, .nav-bar:hover .nav-link, .nav-bar:hover .nav-link a {
+  color: var(--white);
+}
+
+.nav-bar:hover #banner {
+  background-color: var(--light_grey);
+}
+
+.nav-bar:hover {
+  background-color: var(--primary_color);
+}
+
 /* styling for links */
 
 .links {
@@ -153,21 +158,12 @@ header img {
   transition: border 0.5s;
 }
 
-.link-wrapper span {
-  margin-left: 3px;
-}
-
-#name, .personal-link, .nav-link, .nav-link a {
+#name, .nav-link, .nav-link a {
   color: var(--dark_grey);
 }
 
 .nav-link:hover {
   border-bottom: 1px solid var(--white);
-}
-
-.personal-link:hover {
-  border-bottom: 1px solid var(--primary_color);
-  color: var(--primary_color);
 }
 
 a i, a span {
@@ -219,6 +215,16 @@ a:hover i, a:hover span {
   text-align: center;
 }
 
+.project h1 {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.project h1, .project p, .project a {
+  margin: 0;
+  padding: 0.25em;
+}
+
 .project-info {
   position: absolute;
   width: 100%;
@@ -234,19 +240,6 @@ a:hover i, a:hover span {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-}
-
-.project-info h1 {
-  font-size: 1.5em;
-}
-
-.project-info p {
-  font-weight: 200;
-}
-
-.project-info h1, p, a {
-  margin: 0;
-  padding: 0.25em;
 }
 
 .project-title {
@@ -299,7 +292,7 @@ a:hover i, a:hover span {
 /* footer with redirect links */
 
 footer {
-  background-color: var(--primary_color);
+  background-color: var(--light_grey);
 }
 
 .redirect {
@@ -307,6 +300,26 @@ footer {
   margin: 0 auto;
   padding: 4em 1em;
   max-width: 50em;
-  line-height: 1.5;
+  line-height: 1.2;
+}
+
+.redirect a {
+  border: 1px solid var(--primary_color);
+  border-radius: 290486px;
+  transition: all 0.2s ease-out;
+
+  padding: 0.75em 1.5em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  color: var(--white);
+}
+
+.redirect a:hover {
+  background: var(--primary_color);
+  color: var(--white);
+}
+
+.redirect a:hover i, .redirect a:hover span {
+  color: var(--white);
 }
 
