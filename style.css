@@ -19,7 +19,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 0.833vw; /* 16px for viewport width = 1920px */
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   color: var(--dark_grey);
 }
@@ -38,10 +38,20 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   
+  height: 100vh;
   text-align: center;
   line-height: 1.2;
   max-width: none;
-  padding: 10vw 2em;
+}
+
+.header-content {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 header h1 {
@@ -91,7 +101,7 @@ header img {
   width: 100vw;
 
   background: var(--light_grey);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 #magic-navbar {
@@ -103,9 +113,9 @@ header img {
 }
 
 #banner {
-  transition: background 0.3s ease;
+  transition: background 0.5s ease;
   background-color: var(--primary_color);
-  height: 10px;
+  height: 0.625em /* 10px equivalent */;
 }
 
 #nav {
@@ -113,12 +123,12 @@ header img {
   justify-content: space-between;
   align-items: center;
 
-  padding: 10px 20px;
+  padding: 0.625em 1.25em /* 10px 20px equivalent */;
   font-size: 1em;
 }
 
 #nav div {
-  margin: 0 10px;
+  margin: 0 0.625em;
 }
 
 #nav #right-side {
@@ -128,12 +138,13 @@ header img {
 }
 
 #nav #right-side img {
-  height: 50px;
-  width: 50px;
-  margin: 0 10px;
+  /* equivalent of 50px x 50px */
+  height: 3.125em;
+  width: 3.125em;
+  margin: 0 0.625em;
 }
 
-.nav-bar:hover #name, .nav-bar:hover .nav-link, .nav-bar:hover .nav-link a {
+.nav-bar:hover .nav-link, .nav-bar:hover .nav-link a {
   color: var(--white);
 }
 
@@ -153,12 +164,11 @@ header img {
   align-items: center;
 }
 
-.link-wrapper {
-  height: 22px;
+.nav-link {
   transition: border 0.5s;
 }
 
-#name, .nav-link, .nav-link a {
+.nav-link, .nav-link a {
   color: var(--dark_grey);
 }
 
@@ -215,14 +225,35 @@ a:hover i, a:hover span {
   text-align: center;
 }
 
+#pitt {
+  background-image: url("references/downtown_pittsburgh.jpg");
+}
+
+#traders {
+  background-image: url("references/work_table.jpg");
+}
+
+#red-wine {
+  background-image: url("references/red_wine.jpg");
+}
+
+#front-end {
+  background-image: url("references/front-end.jpg");
+}
+
+.project h1, .project p, .project a, .project i {
+  margin: 0;
+  padding: 0;
+}
+
 .project h1 {
+  padding: 0.25em;
   font-size: 1.5em;
   font-weight: 500;
 }
 
-.project h1, .project p, .project a {
-  margin: 0;
-  padding: 0.25em;
+.project p {
+  padding: 0.25em 1em;
 }
 
 .project-info {
