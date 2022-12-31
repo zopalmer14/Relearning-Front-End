@@ -97,19 +97,12 @@ header img {
 
 .nav-bar {
   position: fixed;
+  top: 0;
   z-index: 100;
   width: 100vw;
 
   background: var(--light_grey);
   transition: all 0.5s ease;
-}
-
-#magic-navbar {
-  top: -200px;
-}
-
-#normal-navbar {
-  top: 0;
 }
 
 #banner {
@@ -187,19 +180,70 @@ a:hover i, a:hover span {
 /* personal info */
 
 .personal-info {
-  align-content: center;
-  margin: 0 auto;
-  padding: 4em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 5vh auto;
   max-width: 50em;
   line-height: 1.5;
+}
+
+.personal-info h1 {
+  margin: 0;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2.5em;
+  color: var(--primary_color);
+}
+
+/* redirect links */
+
+.redirect {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: 50em;
+}
+
+.redirect a {
+  border: 1px solid var(--primary_color);
+  border-radius: 290486px;
+  transition: all 0.2s ease-out;
+
+  padding: 0.75em 1.5em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  color: var(--white);
+}
+
+.redirect a:hover {
+  background: var(--primary_color);
+  color: var(--white);
+}
+
+.redirect a:hover i, .redirect a:hover span {
+  color: var(--white);
 }
 
 /* project portfolio styles */
 
 #portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 5vh auto;
+}
+
+#portfolio-grid {
   aspect-ratio: 2 / 1;
   width: 80vw;
-  margin: 80px auto 0 auto;
+  margin: 0 auto;
   padding: 2.5vw 0;
 
   display: grid;
@@ -318,39 +362,5 @@ a:hover i, a:hover span {
 
 .icon-container:hover i {
   color: var(--dark_grey);
-}
-
-/* footer with redirect links */
-
-footer {
-  background-color: var(--light_grey);
-}
-
-.redirect {
-  align-content: center;
-  margin: 0 auto;
-  padding: 4em 1em;
-  max-width: 50em;
-  line-height: 1.2;
-}
-
-.redirect a {
-  border: 1px solid var(--primary_color);
-  border-radius: 290486px;
-  transition: all 0.2s ease-out;
-
-  padding: 0.75em 1.5em;
-  font-size: 0.8em;
-  letter-spacing: 0.1em;
-  color: var(--white);
-}
-
-.redirect a:hover {
-  background: var(--primary_color);
-  color: var(--white);
-}
-
-.redirect a:hover i, .redirect a:hover span {
-  color: var(--white);
 }
 
